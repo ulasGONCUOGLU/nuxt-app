@@ -7,6 +7,8 @@
       </pre>
 
     </div>
+
+    
 </template>
 
 <script setup>
@@ -20,6 +22,10 @@ let { data: departments, error } = await supabase
   veri.value = departments
 
 }
+
+
+const { data: { user } } = await supabase.auth.getUser()
+console.log(user)
 
 </script>
 

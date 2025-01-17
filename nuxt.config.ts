@@ -4,12 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', 'vuetify-nuxt-module'],
   supabase: {
-    redirect:false,
+    redirect: true, // true olduğunda login sayfasına yönlendiriliyorsun false olduğunda index sayfasındasın (redirectOptions silebilirsin)
     redirectOptions: {
       login: '/login',
       callback: '/confirm',
-      include: undefined,
-      exclude: [],
+      include: undefined,     // Tüm sayfalar için yönlendirme
+      exclude: [],            // Yönlendirme dışında bırakılacak yollar
       cookieRedirect: false,
     },
   
